@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01testpizza.html</title>
+    <style>
+     input[type=submit]{
+            width: 100%;
+            background-color: crimson;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+        
+        input[type=submit]:hover{
+            background-color: maroon;
+            }
+
+        input[type="radio"]{vertical-align: middle;}
+
+        #pizza1{
+            font-size: 15pt;
+        }
+
+        #pizza2{
+            font-size: 15pt;
+        }
+
+        .half{
+            float: right;
+            width: 700px;
+            height: 500px;
+        }
+
+        .relative {
+		position: relative;
+        width: 600px;
+		height: 430px; 
+        background-position: left;
+	    }
+	    .absolute {
+		position: absolute;
+        right: -35px;
+        width: 330px;
+		height: 430px;
+        background-position: right;
+	}
+    </style>
+    <script>
+        function changepizza1(name) {
+		var filename = "url('images/" + name + ".png')";
+		preview_l.style.backgroundImage = filename; 
+	}
+            
+        function changepizza2(name) {
+		var filename = "url('images/" + name + ".png')";
+		preview_r.style.backgroundImage = filename; 
+	}
+    </script>
+</head>
+<body>
+    <fieldset id="order">
+        <legend text align="center">&nbsp;<img src="./images/papa1.png" alt="">&nbsp;</legend>
+        <fieldset>
+        고객명: <input type="text" maxlength="3" style="width: 200px;"> <br>
+        전화번호: <input type="tel" style="width: 200px;"> <br>
+        E-mail: <input type="email" size="9"> @ <select name="" id="">
+            <option value="">naver.com</option>
+            <option value="">daum.net</option>
+            <option value="">google.com</option>
+        </select> <br>
+        </fieldset>
+
+        <fieldset>
+            <legend text align="center">&lt; 피자 사이즈 &gt;</legend>
+            <input type="text" list="size" placeholder="피자사이즈를 골라주세요" style="width: 200px;">
+            <datalist id="size">
+                <option value="Large">2-3인용(31cm)</option>
+                <option value="Family">3-4인용(36cm)</option>
+                <option value="Party">5-6인용(41cm)</option>
+            </datalist> <p></p>
+        </fieldset>
+
+        <fieldset>
+            <legend text align="center"> &lt; 반반피자 선택 &gt;</legend>
+            <select name="pizza1" id="pizza1" onchange="changepizza1(value)">
+                <option value="">---반반피자1을 고르세요---</option>
+                <option value="pizza1">수퍼 파파스</option>
+                <option value="pizza2">존스 페이버릿</option>
+                <option value="pizza3">위스콘신 치즈 포테이토</option>
+                <option value="pizza4">스파이시 이탈리안</option>
+            </select>
+            <p></p>
+            <select name="pizza2" id="pizza2" onchange="changepizza2(value)">
+                <option value="">---반반피자2를 고르세요---</option>
+                <option value="pizza1">수퍼 파파스</option>
+                <option value="pizza2">존스 페이버릿</option>
+                <option value="pizza3">위스콘신 치즈 포테이토</option>
+                <option value="pizza4">스파이시 이탈리안</option>
+            </select>
+
+            <fieldset class="half">
+                <div id="preview_l" class="relative"> 
+                    <div id="preview_r" class="absolute"> </div>
+                </div>
+            </fieldset>
+
+        </fieldset>
+            
+        <fieldset>
+            <legend text align="center">&lt; 토핑선택 &gt;</legend>
+            <ol> <input type="checkbox" name="Bacon" id="bacon">베이컨</ol>
+            <ol> <input type="checkbox" name="Cheese" id="cheese">치즈</ol>
+            <ol> <input type="checkbox" name="Onion" id="Onion">양파</ol>
+            <ol> <input type="checkbox" name="Mushroom" id="Mushroom">버섯</ol>
+        </fieldset> <p></p>
+
+        <fieldset>
+            &lt; 희망배송시간 &gt; <p></p> <input type="time" name="wtime" id="wtime"> <p></p>
+            &lt; 배송시 요청사항 &gt; <p></p>
+            <textarea name="want" id="want" cols="30" rows="10"></textarea> <br>  
+        </fieldset>             
+            <input type="submit" value="주문하기">
+
+            <p></p>
+    </fieldset>
+</body>
+</html>

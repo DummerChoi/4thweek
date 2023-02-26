@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>01testpizza.html</title>
+    <style>
+     input[type=submit]{
+            width: 100%;
+            background-color: crimson;
+            color: white;
+            padding: 14px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            }
+        
+        input[type=submit]:hover{
+            background-color: maroon;
+            }
+
+        input[type="radio"]{vertical-align: middle;}
+    </style>
+</head>
+<body>
+    <fieldset id="order">
+        <legend text align="center">&nbsp;<img src="./images/papa1.png" alt="">&nbsp;</legend>
+        <fieldset>
+        고객명: <input type="text" maxlength="3" style="width: 200px;"> <br>
+        전화번호: <input type="tel" style="width: 200px;"> <br>
+        E-mail: <input type="email" placeholder="naver.com" style="width: 200px;"> <br>
+        </fieldset>
+
+        <fieldset>
+            <legend text align="center">&lt; 피자 사이즈 &gt;</legend>
+            <input type="text" list="size" placeholder="피자사이즈를 골라주세요" style="width: 200px;">
+            <datalist id="size">
+                <option value="Large">2-3인용(31cm)</option>
+                <option value="Family">3-4인용(36cm)</option>
+                <option value="Party">5-6인용(41cm)</option>
+            </datalist> <p></p>
+        </fieldset>
+
+        <fieldset>
+            <legend text align="center"> &lt; 크러스트 선택 &gt;</legend>
+            <table>
+                <tr>
+                    <td><img src="./images/paori.png" height="200" width="200" title="72시간 4℃에서 저온숙성한 고소하고 담백한 맛의 크러스트"></td>
+                    <td><img src="./images/pathin.png" height="200" width="200" title="바삭한 식감의 부담없이 즐길 수 있는 씬 크러스트"></td>
+                    <td><img src="./images/pacheese.png" height="200" width="200" title="크러스트 속 쫄깃한 스트링 치즈에 고소한 체다치즈가 더해진 크러스트"></td>
+                    <td><img src="./images/pagold.png" height="200" width="200" title="부드럽고 달콤한 고구마 무스와 쫄깃한 스트링 치즈가 더해진 크러스트"></td>
+                </tr>
+
+                <tr text align="center">
+                    <td><input type="radio" name="order" id="order">오리지널</td>
+                    <td><input type="radio" name="order" id="order">씬</td>
+                    <td><input type="radio" name="order" id="order">치즈롤</td>
+                    <td><input type="radio" name="order" id="order">골드링</td>
+                </tr>
+            </table>
+        </fieldset>
+
+        <fieldset>
+            <legend text align="center">&lt; 토핑선택 &gt;</legend>
+            <ol> <input type="checkbox" name="Bacon" id="bacon">베이컨</ol>
+            <ol> <input type="checkbox" name="Cheese" id="cheese">치즈</ol>
+            <ol> <input type="checkbox" name="Onion" id="Onion">양파</ol>
+            <ol> <input type="checkbox" name="Mushroom" id="Mushroom">버섯</ol>
+        </fieldset> <p></p>
+
+        <fieldset>
+            &lt; 희망배송시간 &gt; <p></p> <input type="time" name="wtime" id="wtime"> <p></p>
+            &lt; 배송시 요청사항 &gt; <p></p>
+            <textarea name="want" id="want" cols="30" rows="10"></textarea> <br>  
+        </fieldset>             
+            <input type="submit" value="주문하기">
+
+            <p></p>
+    </fieldset>
+</body>
+</html>
